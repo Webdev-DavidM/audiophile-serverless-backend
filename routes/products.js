@@ -39,8 +39,6 @@ app.get("/category/:category", async (req, res) => {
 });
 
 app.get("/product/:slug", async (req, res) => {
-  console.log("hit and updated");
-
   try {
     const { slug } = req.params; // Get the category parameter from the URL
 
