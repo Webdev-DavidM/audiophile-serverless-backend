@@ -1,0 +1,21 @@
+service: express-serverless-audiophile
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: eu-west-2
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: "{proxy+}"
+
+plugins:
+  - serverless-offline
